@@ -7,8 +7,9 @@
   }
   
   body {
+    background-image: url(./MacBook\ Pro\ 14_\ -\ 5.png);
+    background-size: cover;
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
     background-color: black;
     color: white;
   }
@@ -28,7 +29,7 @@
   }
 
   .logo img {
-    height: 50px; /* Adjust the height of your logo */
+    height: 55px; /* Adjust the height of your logo */
     width: auto;
   }
   
@@ -48,25 +49,28 @@
   }
   
   .cta-button {
-    background-color: purple;
+    font-family: 'Inter', sans-serif;
+    background-color: #6222CD;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 12px;
   }
   
   .hero {
     text-align: center;
-    padding: 10rem 2rem;
+    padding: 8rem 2rem;
     color: white;
+    letter-spacing: -1px;
   }
   
   .hero h1 {
     font-size: 50px;
     margin-bottom: 1rem;
-    letter-spacing: 0vh;
+    letter-spacing: -1px;
   }
   
   .hero h2 {
@@ -77,11 +81,11 @@
   .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   
   .hero-buttons .hero-btn {
-    background-color: purple;
+    background-color: #6222CD;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -97,23 +101,26 @@
     }
   
     .hero {
-      padding: 5rem 1rem;
+      padding: 3rem 1rem;
     }
   
     .hero h1 {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
   
     .hero h2 {
-      font-size: 1.2rem;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: 0px;
     }
   
     .hero-buttons {
       flex-direction: column;
+      align-items: center;
     }
   
     .hero-buttons .hero-btn {
-      width: 100%;
+      width: 50%;
     }
   }
 
@@ -132,7 +139,7 @@
 .image-grid {
     display: flex;
     justify-content: space-around;
-    padding: 2rem;
+    padding: rem;
   }
   
   .image-item img {
@@ -190,7 +197,7 @@
 .three-items-section {
     display: flex;
     justify-content: space-around;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
   }
   
   .item {
@@ -206,13 +213,15 @@
   
   .item h3 {
     font-size: 1.5rem;
+    letter-spacing: 0px;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: white;
   }
   
   .item p {
     font-size: 1rem;
-    color: #666;
+    font-weight: 500;
+    color: #BAB8B8;
   }
   
   /* Responsive Styles for Three Items Section */
@@ -295,17 +304,17 @@
   }
   
   .join-beta-section h1 {
-    font-size: 2.5rem;
-    font-weight: 500;
+    font-size: 35px;
+    font-weight: 700;
     margin-bottom: 1rem;
     color: white;
   }
   
   .join-beta-section h3 {
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 2rem;
-    color: white;
+    color: #BAB8B8;
   }
   
   .beta-form {
@@ -319,14 +328,14 @@
     max-width: 400px;
     padding: 0.75rem;
     margin-bottom: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     background-color: black;
     color: white;
     border-radius: 5px;
   }
   
   .beta-form button {
-    background-color: purple;
+    background-color: #6222CD;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -342,13 +351,15 @@
   }
   
   .countdown-section h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     margin-bottom: 1rem;
-    color: #333;
+    color: white;
   }
   
   .countdown-timer {
     font-size: 2rem;
+    font-weight: 700;
     color: white;
     margin-top: 1rem;
   }
@@ -361,7 +372,7 @@
     }
   
     .join-beta-section h3 {
-      font-size: 1.2rem;
+      font-size: rem;
     }
   
     .beta-form input {
@@ -373,12 +384,12 @@
 .text-image-footer-section {
     display: flex;
     align-items: center;
-    padding: 4rem 2rem;
+    padding: 3rem 4rem;
     
   }
   
   .text-container {
-    flex: 1; /* Allow the text container to take equal space */
+    flex: 1; 
     text-align: left;
   }
   
@@ -389,13 +400,13 @@
   }
   
   .get-started-button {
-    background-color: purple;
+    background-color: #6222CD;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 1rem; /* Space above button */
   }
   
@@ -405,7 +416,7 @@
   }
   
   .image-container img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
     border-radius: 10px;
   }
@@ -418,21 +429,11 @@
   }
   
   .footer-content p {
+    font-size: 11px;
+    font-weight: 500;
     margin: 0;
   }
   
-  .social-media-icons {
-    margin-top: 1rem;
-  }
-  
-  .social-media-icons a {
-    margin: 0 10px;
-  }
-  
-  .social-media-icons img {
-    width: 30px; /* Adjust size of social media icons */
-    height: auto;
-  }
   
   /* Responsive Styles */
   @media (max-width: 768px) {
@@ -447,7 +448,7 @@
     }
   
     .text-container h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   
     .image-container img {

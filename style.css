@@ -1,0 +1,442 @@
+@import url('https://fonts.cdnfonts.com/css/inter');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    background-color: black;
+    color: white;
+  }
+
+  .navbar {
+    font-size: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+  }
+  
+  .navbar .logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar .nav-links li {
+    margin: 0 1rem;
+  }
+  
+  .navbar .nav-links a {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .cta-button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 10rem 2rem;
+    color: white;
+  }
+  
+  .hero h1 {
+    font-size: 50px;
+    margin-bottom: 1rem;
+    letter-spacing: 0vh;
+  }
+  
+  .hero h2 {
+    font-size: 15px;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .hero-buttons .hero-btn {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar .nav-links {
+      display: none;
+    }
+  
+    .hero {
+      padding: 5rem 1rem;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero h2 {
+      font-size: 1.2rem;
+    }
+  
+    .hero-buttons {
+      flex-direction: column;
+    }
+  
+    .hero-buttons .hero-btn {
+      width: 100%;
+    }
+  }
+
+  /* Image Grid Section */
+.image-grid {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+  
+  .image-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Styles for Image Grid */
+  @media (max-width: 768px) {
+    .image-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .image-item {
+      margin-bottom: 1.5rem;
+    }
+  
+    .image-item img {
+      max-width: 90%;
+    }
+  }
+
+  /* Text and Image Section */
+.text-image-section {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .text-image-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .text-image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .text-image-section h1 {
+      font-size: 2rem;
+    }
+  
+    .text-image-section img {
+      max-width: 90%;
+    }
+  }
+/* Three Items Section */
+.three-items-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 2rem;
+  }
+  
+  .item {
+    text-align: center;
+    width: 30%;
+  }
+  
+  .item img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .item p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Responsive Styles for Three Items Section */
+  @media (max-width: 768px) {
+    .three-items-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .item {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  /* Image and Text Section */
+.image-text-section {
+    display: flex;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+  
+  .image-container {
+    flex: 1; /* Allow the image container to take equal space */
+    padding-right: 2rem; /* Space between image and text */
+  }
+  
+  .image-text-section img {
+    max-width: 80%;
+    height: 80%;
+    border-radius: 10px;
+  }
+  
+  .text-container {
+    flex: 1; /* Allow the text container to take equal space */
+    text-align: left;
+  }
+  
+  .text-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .text-container h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .image-text-section {
+      flex-direction: column;
+      align-items: center; /* Center align on small screens */
+    }
+  
+    .image-container {
+      padding-right: 0; /* Remove padding on mobile */
+      margin-bottom: 2rem; /* Space below image */
+    }
+  
+    .text-container {
+      text-align: center; /* Center align text on mobile */
+    }
+  
+    .text-container h1 {
+      font-size: 2rem;
+    }
+  
+    .text-container h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Join the Beta Section */
+.join-beta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .join-beta-section h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .join-beta-section h3 {
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  
+  .beta-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .beta-form input {
+    width: 80%;
+    max-width: 400px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .beta-form button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  /* Countdown Section */
+  .countdown-section {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .countdown-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .countdown-timer {
+    font-size: 2rem;
+    color: white;
+    margin-top: 1rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .join-beta-section h1, 
+    .countdown-section h1 {
+      font-size: 2rem;
+    }
+  
+    .join-beta-section h3 {
+      font-size: 1.2rem;
+    }
+  
+    .beta-form input {
+      width: 90%;
+    }
+  }
+
+  /* Text and Image Section */
+.text-image-footer-section {
+    display: flex;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #f5f5f5;
+  }
+  
+  .text-container {
+    flex: 1; /* Allow the text container to take equal space */
+    text-align: left;
+  }
+  
+  .text-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .get-started-button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem; /* Space above button */
+  }
+  
+  .image-container {
+    flex: 1; /* Allow the image container to take equal space */
+    text-align: right; /* Align image to the right */
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Footer */
+  .footer {
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .footer-content p {
+    margin: 0;
+  }
+  
+  .social-media-icons {
+    margin-top: 1rem;
+  }
+  
+  .social-media-icons a {
+    margin: 0 10px;
+  }
+  
+  .social-media-icons img {
+    width: 30px; /* Adjust size of social media icons */
+    height: auto;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .text-image-footer-section {
+      flex-direction: column; /* Stack elements vertically on small screens */
+      align-items: center;
+      text-align: center; /* Center text for mobile */
+    }
+  
+    .text-container {
+      margin-bottom: 2rem; /* Space below text container */
+    }
+  
+    .text-container h1 {
+      font-size: 2rem;
+    }
+  
+    .image-container img {
+      max-width: 90%; /* Adjust image size on mobile */
+    }
+  }
+  
+  

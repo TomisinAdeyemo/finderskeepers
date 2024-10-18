@@ -9,7 +9,11 @@
 <body>
   <!-- Navbar Section -->
   <nav class="navbar">
-    <div class="logo">LOGO</div>
+    <div class="logo">
+        <a href="./index.html">
+          <img src="./password_reseted 1.png" alt="Website Logo" class="logo-image">
+        </a>
+      </div>
     <ul class="nav-links">
       <li><a href="#">Home</a></li>
       <li><a href="#">Safety</a></li>
@@ -45,23 +49,22 @@
   <!-- Text and Image Section -->
 <section class="text-image-section">
     <h1>Discover Apple Genie</h1>
-    <img src="./Line_004 1.png" alt="Centered Image">
   </section>
 
   <!-- Three Items Section -->
 <section class="three-items-section">
     <div class="item">
-      <img src="logo1.png" alt="Logo 1">
+      <img src="./Group 1171274764.png" alt="Logo 1">
       <h3>Chat with Apple Genie</h3>
       <p>Experience smarter conversations with Apple Genie, helping you connect and communicate better.</p>
     </div>
     <div class="item">
-      <img src="logo2.png" alt="Logo 2">
+      <img src="./Group 1171274764 (1).png" alt="Logo 2">
       <h3>Analyze Chats</h3>
       <p>Get personalized insights and feedback to enhance your communication with your partner.</p>
     </div>
     <div class="item">
-      <img src="logo3.png" alt="Logo 3">
+      <img src="./Group 1171274765.png" alt="Logo 3">
       <h3>Apple Genie 3-Way Call</h3>
       <p>A call between you and your partner, with AI guiding your dialogue for clearer, more meaningful conversations.</p>
     </div>
@@ -85,7 +88,9 @@
   <!-- Join the Beta Section -->
 <section class="join-beta-section">
     <h1>Join the Beta</h1>
-    <h3>Be one of the first to experience FindersKeepers before anyone else! Help us shape the future of dating by testing out our features, giving feedback, and getting early access to exclusive updates.</h3>
+    <h3>Be one of the first to experience FindersKeepers before anyone else! <br>
+        Help us shape the future of dating by testing out our features, <br>
+        giving feedback, and getting early access to exclusive updates.</h3>
     <form class="beta-form">
       <input type="text" placeholder="Name" required>
       <input type="email" placeholder="Email" required>
@@ -115,42 +120,41 @@
     <div class="footer-content">
       <p>&copy;  All Rights Reserved. 2024,FinderKeepers Inc.</p>
       <div class="social-media-icons">
-        <a href="#" aria-label="WhatsApp"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
-        <a href="#" aria-label="Twitter"><img src="twitter-icon.png" alt="Twitter"></a>
-        <a href="#" aria-label="Instagram"><img src="instagram-icon.png" alt="Instagram"></a>
+        <a href="#" aria-label="Privacy Policy"></a>
+        <a href="#" aria-label="Terms of Service"></a>
+        <a href="#" aria-label="Data Record"></a>
       </div>
     </div>
   </footer>
   
 </body>
 </html>
-
 <script>
-    // Set the date we're counting down to
-    const countDownDate = new Date().getTime() + (14 * 24 * 60 * 60 * 1000); // 14 days from now
-    
-    // Update the countdown every second
+    let countDownDate = localStorage.getItem('countDownDate');
+
+    if (!countDownDate) {
+        countDownDate = new Date().getTime() + (14 * 24 * 60 * 60 * 1000); // 14 days from now
+        localStorage.setItem('countDownDate', countDownDate); // Save the countdown date
+    }
+
     const x = setInterval(function() {
-      // Get today's date and time
-      const now = new Date().getTime();
+        // Get today's date and time
+        const now = new Date().getTime();
         
-      // Find the distance between now and the count down date
-      const distance = countDownDate - now;
-    
-      // Time calculations for days, hours, minutes and seconds
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-      // Display the result in the countdown element
-      document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-    
-      // If the countdown is finished, display a message
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "EXPIRED";
-      }
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+            localStorage.removeItem('countDownDate'); 
+        }
     }, 1000);
     </script>
     

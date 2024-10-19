@@ -7,7 +7,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar Section -->
+   
+<div id="popup" class="popup-overlay">
+    <div class="popup-content">
+        <h1>Launching Soon</h1>
+        <div id="countdown">
+            <p id="days">14</p> 
+            <p>days left</p>
+        </div>
+
+        <form class="popup-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+
+        <button id="cancel-btn" class="cancel-btn">Cancel</button>
+    </div>
+</div>
+
+
   <nav class="navbar">
     <div class="logo">
         <a href="./index.html">
@@ -161,5 +188,37 @@
         }
     }, 1000);
     </script>
+
+    <script> countdownElement = document.getElementById("days");
+let launchDate = new Date().getTime() + 14 * 24 * 60 * 60 * 1000; // 14 days from now
+
+function updateCountdown() {
+    let now = new Date().getTime();
+    let timeRemaining = launchDate - now;
+
+    let days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+
+    if (days >= 0) {
+        countdownElement.innerText = days;
+    } else {
+        countdownElement.innerText = 0; // If time is up
+    }
+}
+
+// Run countdown every second
+setInterval(updateCountdown, 1000);
+
+// Show Pop-up when user logs in
+window.onload = function () {
+    document.getElementById('popup').classList.add('popup-active');
+};
+
+// Close Pop-up when Cancel Button is clicked
+document.getElementById("cancel-btn").addEventListener("click", function () {
+    document.getElementById("popup").classList.remove('popup-active');
+});
+
+</script>
+
 
     

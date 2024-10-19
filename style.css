@@ -46,7 +46,7 @@
     font-size: 12px;
     color: white;
     text-decoration: none;
-  }
+  }  
   
   .cta-button {
     font-family: 'Inter', sans-serif;
@@ -64,18 +64,18 @@
     text-align: center;
     padding: 8rem 2rem;
     color: white;
-    letter-spacing: -1px;
   }
   
   .hero h1 {
     font-size: 50px;
     margin-bottom: 1rem;
-    letter-spacing: -1px;
+    letter-spacing: -3px;
   }
   
   .hero h2 {
     font-size: 15px;
     margin-bottom: 2rem;
+    letter-spacing: 0px;
   }
   
   .hero-buttons {
@@ -421,17 +421,76 @@
     border-radius: 10px;
   }
   
-  /* Footer */
-  .footer {
+ /* General Footer Styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
     color: white;
-    padding: 2rem;
+  }
+  
+  /* Left Section: Legal Links */
+  .footer-left ul {
+    font-size: 10px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-left ul li {
+    display: inline;
+  }
+  
+  .footer-left ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-left ul li a:hover {
+    color: #3498db; /* Change color on hover */
+  }
+  
+  /* Center Section: Copyright */
+  .footer-center {
     text-align: center;
   }
   
-  .footer-content p {
-    font-size: 11px;
-    font-weight: 500;
+  .footer-center p {
     margin: 0;
+    font-size: 10px;
+  }
+  
+  /* Right Section: Social Links */
+  .footer-right {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-right a {
+    font-size: 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-right a:hover {
+    color: #6222CD; /* Change color on hover */
+  }
+  
+  /* Responsive Footer */
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-left, .footer-right {
+      margin: 1rem 0;
+    }
   }
   
   

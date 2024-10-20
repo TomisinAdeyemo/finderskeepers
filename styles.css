@@ -1,0 +1,149 @@
+@import url('https://fonts.cdnfonts.com/css/inter');
+@import url('https://fonts.cdnfonts.com/css/futura-std-4');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url(./safety.png);
+    font-family: 'Futura Std', sans-serif;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+  }
+
+  .center-text1 {
+    align-items: center;
+    text-align: center;
+  }
+
+  .content-section {
+    padding-left: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 22px;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #BAB8B8;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  h3 {
+    font-size: 13px;
+  }
+
+  .bullet-points li {
+    font-size: 12px;
+  }
+
+  .content-section3 {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .list1 {
+    margin-top: 20px;
+  }
+
+  .footer {
+    margin-top: 90px;
+  }
+
+  @media (max-width: 480px) {
+    .content-section, 
+    .content-section3 {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  
+    p {
+      font-size: 10px;
+    }
+  
+    h2 {
+      font-size: 14px;
+    }
+  
+    h3 {
+      font-size: 12px;
+    }
+  
+    .bullet-points li {
+      font-size: 10px;
+    }
+  
+    .footer {
+      margin-top: 50px;
+      padding: 1rem;
+    }
+  }
+  
+  /* Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+    .content-section, 
+    .content-section3 {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  
+    p {
+      font-size: 11px;
+    }
+  
+    h2 {
+      font-size: 14px;
+    }
+  
+    h3 {
+      font-size: 12px;
+    }
+  
+    .bullet-points li {
+      font-size: 11px;
+    }
+  
+    .footer {
+      margin-top: 70px;
+    }
+  }
+  
+  /* Larger Screens (min-width: 769px) */
+  @media (min-width: 769px) {
+    .content-section, 
+    .content-section3 {
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+  
+    p {
+      font-size: 12px;
+    }
+  
+    h2 {
+      font-size: 15px;
+    }
+  
+    h3 {
+      font-size: 13px;
+    }
+  
+    .bullet-points li {
+      font-size: 12px;
+    }
+  
+    .footer {
+      margin-top: 90px;
+    }
+  }
+
+  

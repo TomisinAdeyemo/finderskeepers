@@ -49,8 +49,7 @@
     <ul class="nav-links">
       <li><a href="./index.html">Home</a></li>
       <li><a href="./contact.html">Contact</a></li>
-      <li><a href="./terms of use.html">Support</a></li>
-      <li><a href="#">FAQ</a></li>
+      <li><a href="./terms of use.html">Guidelines</a></li>
     </ul>
     <button class="cta-button">Sign Up Now</button>
   </nav>
@@ -129,29 +128,30 @@
     </form>
   </section>
   
+    <!-- Text and Image Section -->
+<section class="text-image-footer-section">
+  <div class="text-container">
+    <h1>Ready to find a match</h1>
+    <button class="get-started-button">Join Beta</button>
+  </div>
+</section>
+
   <!-- Countdown Section -->
   <section class="countdown-section">
     <h1>Countdown to Launch</h1>
-    <div class="countdownDate" id="countdown">
-      14 Days
+    <div class="countdown-timer" id="countdown">
+        14 Days
     </div>
-  </section>
+</section>
 
-  <!-- Text and Image Section -->
-<section class="text-image-footer-section">
-    <div class="text-container">
-      <h1>Ready to find a match</h1>
-      <button class="get-started-button">Join Beta</button>
-    </div>
-  </section>
+
   
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-left">
         <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Data Record</a></li>
+            <li><a href="./terms of use.html">Guidelines</a></li>
+            <li><a href="./terms of service.html">Privacy Policy</a></li>
         </ul>
     </div>
 
@@ -165,12 +165,11 @@
         <a href="https://www.facebook.com/profile.php?id=61567170906089&mibextid=LQQJ4d" aria-label="WhatsApp"><i class="fab fa-facebook"></i></a>
     </div>
 </footer>
-
   
 </body>
 </html>
 <script>
-    let countDownDate = localStorage.getItem('countDownDate');
+    let countDownDate = localStorage.getItem('countDown');
 
     if (!countDownDate) {
         countDownDate = new Date().getTime() + (14 * 24 * 60 * 60 * 1000); // 14 days from now
@@ -229,6 +228,8 @@ document.getElementById("close-btn").addEventListener("click", function () {
 });
 
 </script>
+
+
 
 
 

@@ -217,6 +217,10 @@
       width: 120px;
     }
   }
+
+  .cta-button {
+    display: flex;
+  }
   
 
   /* Responsive Navbar */

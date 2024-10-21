@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FindersKeepers</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./password_reseted 1.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -51,7 +52,7 @@
       <li><a href="./terms of use.html">Privacy Policy</a></li>
       <li><a href="./terms of service.html">Terms of Service</a></li>
     </ul>
-    <button class="nav-button">Sign Up</button>
+    <button onclick="scrollToBottom()" class="nav-button">Sign Up</button>
   </div>
 
   <!-- Hamburger Icon for Mobile -->
@@ -63,13 +64,6 @@
 </nav>
 
   <!-- Hero Section -->
-
-  <section class="hero">
-    <h1>We are launching soon</h1>
-    <h2>13: 24: 59: 30</h2>
-  </section>
-
-
   <section class="hero">
     <h1>Find your perfect match <br>at <span class="highlight">Finders</span>Keepers</h1>
     <h2>Where apples lead to love: send, accept, and connect with someone<br> special in the simplest way possible</h2>
@@ -80,6 +74,13 @@
         <a href="#" class="appstore-btn">
             <img src="./jjj.png" alt="Download from App Store">
         </a>
+    </div>
+  </section>
+
+  <section class="hero">
+    <h1>We are launching soon</h1>
+    <div id="countdown">
+      <p id="timer"></p>
     </div>
   </section>
 
@@ -129,7 +130,6 @@
     </div>
   </section>
 
-  <!-- Join the Beta Section -->
 <!-- Join Beta Section -->
 <section class="join-beta" id="bottom-section">
   <div class="beta-text">
@@ -140,25 +140,20 @@
   </div>
 
   <div class="beta-form">
-      <form>
-          <input type="text" name="name" placeholder="Name" required><br>
-          <input type="email" name="email" placeholder="Email" required><br>
-          <input type="tel" name="phone" placeholder="Phone Number" required><br>
-          <button type="submit">Submit</button>
+    <form id="contactForm">
+          <label for="name">Name</label>
+          <input type="text" name="name" placeholder="Full Name" required><br>
+
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Email Address" required><br>
+
+          <label for="phone">Phone</label>
+          <input type="tel" name="phone" placeholder="Mobile Number" required><br>
+
+          <button type="submit" id="submitButton">Submit</button>
       </form>
-  </div>
+  
 </section>
-
-
-  <!-- Countdown Section -->
-  <section class="countdown-section">
-    <h1>Countdown to Launch</h1>
-    <div class="countdown-timer" id="countdown">
-        14 Days
-    </div>
-</section>
-
-
   
   <!-- Footer -->
   <footer class="footer">
@@ -251,7 +246,8 @@ document.getElementById("close-btn").addEventListener("click", function () {
   const bottomSection = document.getElementById("bottom-section");
   bottomSection.scrollIntoView({ behavior: "smooth" });
 
-}</script>
+}
+</script>
 
 <script>function toggleMenu() {
   const menu = document.querySelector('.menu');
@@ -259,6 +255,132 @@ document.getElementById("close-btn").addEventListener("click", function () {
 }
 
 </script>
+
+<script>
+  
+  // Function to calculate the remaining time
+function startCountdown() {
+  // Check if there's already an end time saved in localStorage
+  const savedEndTime = localStorage.getItem('endTime');
+  let endTime;
+
+  if (savedEndTime) {
+    // Use the saved end time if it exists
+    endTime = new Date(savedEndTime);
+  } else {
+    // Set the end time for 14 days from now if not saved
+    endTime = new Date();
+    endTime.setDate(endTime.getDate() + 14);
+    localStorage.setItem('endTime', endTime); // Save the end time in localStorage
+  }
+
+  // Update the countdown every second
+  const interval = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = endTime - now;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the timer element
+    document.getElementById("timer").innerHTML =
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    // If the countdown is over, display a message and stop the timer
+    if (distance < 0) {
+      clearInterval(interval);
+      document.getElementById("timer").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+}
+
+// Start the countdown when the page loads
+window.onload = startCountdown;
+</script>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const phone = event.target.phone.value;
+
+    const data = {
+      fields: {
+        Name: name,
+        Email: email,
+        Phone: phone,
+      }
+    };
+
+    fetch('https://api.airtable.com/v0/appezTp09gLXihGwC/responses', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer pat8vH2xaKpoQCRGU.676bd17e2e6fd5bec17c1b3482b5bc698651316cea0dffa35423b391d162c2f3',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      // Display a success message to the user here
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      // Handle the error (e.g., show an error message)
+    });
+  });
+</script>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const name = event.target.name.value;
+  const email = event.target.email.value;
+  const phone = event.target.phone.value;
+  const submitButton = document.getElementById('submitButton'); // Get the button element
+
+  const data = {
+    fields: {
+      'Name': name,
+      'Email': email,
+      'Phone': phone,
+    }
+  };
+
+  fetch('https://api.airtable.com/v0/appezTp09gLXihGwC/responses', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer pat8vH2xaKpoQCRGU.676bd17e2e6fd5bec17c1b3482b5bc698651316cea0dffa35423b391d162c2f3',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+
+    submitButton.textContent = 'You are In!'; // Change the button text
+    submitButton.style.backgroundColor = '#63FF73'; // Change background color
+    submitButton.style.color = 'white'; // Optional: Change text color to white
+
+    // Optionally clear the form
+    event.target.reset();
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    // Handle error (you might also want to display an error message)
+  });
+});
+</script>
+
+
 
 
 

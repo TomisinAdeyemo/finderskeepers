@@ -390,13 +390,17 @@
     }
 
     .hero2 h1 {
-      font-size: 35px;
+      font-size: 40px;
       letter-spacing: 0px;
     }
   
     .hero2 p {
       font-size: 50px;
     }
+
+      #timer {
+          font-size: 30px;
+      }
   
     .download-buttons img {
       width: 140px; /* Smaller buttons on smaller screens */

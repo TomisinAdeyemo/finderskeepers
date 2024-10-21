@@ -24,7 +24,7 @@
   
 
   .logo img {
-    height: 40px; /* Adjust the height of your logo */
+    height: 20px; /* Adjust the height of your logo */
     width: auto;
   }
   
@@ -218,8 +218,20 @@
     }
   }
 
-  .cta-button {
-    display: flex;
+  @media (max-width: 480px) {
+    .cta-button {
+      padding: 8px 16px;  
+      font-size: 14px;    
+    }
+  }
+  
+  /* Responsive Button for Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+   .cta-button {
+      padding: 5px 20px;  /* Slightly smaller for tablets */
+      font-size: 12px;
+
+    }
   }
   
 
@@ -253,7 +265,7 @@
     .image-grid {
       flex-direction: column;
       align-items: center;
-        margin-left: 60px;
+      margin-left: 60px;
     }
   
     .image-item {
@@ -346,7 +358,7 @@
   
   .image-container {
     flex: 1; /* Allow the image container to take equal space */
-    padding-right: 2rem; /* Space between image and text */
+    padding-right: 10rem; /* Space between image and text */
   }
   
   .image-text-section img {
@@ -400,52 +412,114 @@
     }
   }
 
-  /* Join the Beta Section */
-.join-beta-section {
-    text-align: center;
-    padding: 4rem 2rem;
-  }
-  
-  .join-beta-section h1 {
-    font-size: 35px;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: white;
-  }
-  
-  .join-beta-section h3 {
-    font-size: 15px;
-    font-weight: 500;
-    color: #BAB8B8;
-    margin-bottom: 2rem;
-  }
-  
-  .beta-form {
-    display: flex;
+  /* Join Beta Section Base Styles */
+.join-beta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+
+.beta-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.beta-text h1 {
+  font-size: 60px;
+  color: white;
+}
+
+.beta-text h3 {
+  font-size: 15px;
+  color: #BAB8B8;
+  margin-top: 20px;
+}
+
+.beta-form {
+  flex: 1;
+  max-width: 50%;
+}
+
+.beta-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.beta-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  width: 100%;
+  color: white;
+  background-color: black;
+  border-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.beta-form button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #6222CD;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.beta-form button:hover {
+  background-color: #6222CD;
+}
+
+/* Responsive Design for Smaller Devices */
+@media (max-width: 768px) {
+  .join-beta {
     flex-direction: column;
-    align-items: center;
+    padding: 30px;
   }
-  
-  .beta-form input {
-    width: 80%;
-    max-width: 400px;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid black;
-    background-color: black;
-    color: white;
+
+  .beta-text, .beta-form {
+    max-width: 150%;
+    text-align: center;
+  }
+
+  .beta-text h1 {
+    font-size: 2rem;
+  }
+
+  .beta-text h3 {
+    font-size: 10px;
+  }
+
+  .beta-form input, .beta-form button {
+    font-size: 0.9rem;
+    padding: 8px;
     border-radius: 5px;
+
   }
-  
-  .beta-form button {
-    background-color: #6222CD;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+  .join-beta {
+    padding: 20px;
   }
+
+  .beta-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .beta-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .beta-form input, .beta-form button {
+    font-size: 0.85rem;
+    padding: 7px;
+  }
+}
+
   
   /* Countdown Section */
   .countdown-section {
@@ -568,16 +642,18 @@
       flex-direction: column;
       text-align: center;
       padding: 2rem;
+      gap: 1rem;
     }
   
     .footer-left ul {
       flex-direction: column;
       gap: 0.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
   
     .footer-right a {
       margin: 0.5rem;
+      margin-bottom: 2rem;
     }
   }
   
@@ -600,7 +676,7 @@
     }
   
     .text-container {
-      margin-bottom: 2rem; /* Space below text container */
+      margin-bottom: 1rem; /* Space below text container */
     }
   
     .text-container h1 {

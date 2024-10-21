@@ -51,12 +51,19 @@
       <li><a href="./terms of service.html">Terms of Service</a></li>
       <li><a href="./terms of use.html">Privacy Policy</a></li>
     </ul>
-    <button class="cta-button">Sign Up Now</button>
+    <button onclick="scrollToBottom()" class="cta-button">Sign Up Now</button>
   </nav>
 
   <!-- Hero Section -->
+
   <section class="hero">
-    <h1>Find your perfect match <br>at <span class="highlight">FindersKeepers</span></h1>
+    <h1>We are launching soon</h1>
+    <h2>13: 24: 59: 30</h2>
+  </section>
+
+
+  <section class="hero">
+    <h1>Find your perfect match <br>at <span class="highlight">Finders</span>Keepers</h1>
     <h2>Where apples lead to love: send, accept, and connect with someone<br> special in the simplest way possible</h2>
     <div class="download-buttons">
         <a href="#" class="playstore-btn">
@@ -116,7 +123,7 @@
 
   <!-- Join the Beta Section -->
 <!-- Join Beta Section -->
-<section class="join-beta">
+<section class="join-beta" id="bottom-section">
   <div class="beta-text">
       <h1>Join the Beta</h1>
       <h3>Be one of the first to experience FindersKeepers before anyone else!
@@ -134,14 +141,6 @@
   </div>
 </section>
 
-  
-    <!-- Text and Image Section -->
-<section class="text-image-footer-section">
-  <div class="text-container">
-    <h1>Ready to find a match</h1>
-    <button class="get-started-button">Join Beta</button>
-  </div>
-</section>
 
   <!-- Countdown Section -->
   <section class="countdown-section">
@@ -157,7 +156,7 @@
   <footer class="footer">
     <div class="footer-left">
         <ul>
-            <li><a href="./terms of use.html">Contact</a></li>
+            <li><a href="./contact.html">Contact</a></li>
             <li><a href="./terms of service.html">Privacy Policy</a></li>
             <li><a href="./terms of service.html">Terms of Service</a></li>
         </ul>
@@ -177,7 +176,8 @@
 </body>
 </html>
 <script>
-    let countDownDate = localStorage.getItem('countDown');
+
+    /* let countDownDate = localStorage.getItem('countDown');
 
     if (!countDownDate) {
         countDownDate = new Date().getTime() + (14 * 24 * 60 * 60 * 1000); // 14 days from now
@@ -206,7 +206,7 @@
     </script>
 
     <script>
-const countdownElement = document.getElementById("days");
+/* const countdownElement = document.getElementById("days");
 let launchDate = new Date().getTime() + 14 * 24 * 60 * 60 * 1000; // 14 days from now
 
 function updateCountdown() {
@@ -233,9 +233,17 @@ window.onload = function () {
 // Close Pop-up when 'X' Button is clicked
 document.getElementById("close-btn").addEventListener("click", function () {
     document.getElementById("popup").classList.remove('popup-active');
-});
+}); */
 
 </script>
+
+<script>
+  
+  function scrollToBottom() {
+  const bottomSection = document.getElementById("bottom-section");
+  bottomSection.scrollIntoView({ behavior: "smooth" });
+
+}</script>
 
 
 

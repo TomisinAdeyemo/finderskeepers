@@ -198,6 +198,12 @@
     display: flex;
   }
 
+  .navbar .logo img {
+    width: 150px;
+    height: auto;
+    margin-left: 0px;
+  }
+
   .nav-links {
     gap: 30px;
     flex-direction: column;

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindersKeepers</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./password_reseted 1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+   
+<!-- Pop-up Screen -->
+<div id="popup" class="popup-overlay">
+    <div class="popup-content">
+        <!-- Close Button (X) -->
+        <span id="close-btn" class="close-btn">&times;</span>
+
+        <h1>Launching Soon</h1>
+        <div id="countdown">
+            <p id="days">14</p> <!-- Countdown display -->
+            <p>days left</p>
+        </div>
+
+        <!-- Registration Form -->
+        <form class="popup-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</div>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="./mainman.png" alt="Logo">
+  </div>
+
+  <div class="menu">
+    <ul class="nav-links">
+    </ul>
+    <button onclick="scrollToBottom()" class="nav-button">Join Beta</button>
+  </div>
+
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Find your perfect match <br>at <span class="highlight">Finders</span><span class="highlight2">Keepers</span></h1>
+    <h2>Where apples lead to love: send, accept, and connect with someone<br> special in the simplest way possible</h2>
+    <div class="download-buttons">
+        <a href="" class="playstore-btn">
+            <img src="./Google Play.png" alt="Download from Play Store">
+        </a>
+        <a href=""  class="appstore-btn">
+            <img src="./jjj.png" alt="Download from App Store">
+        </a>
+    </div>
+  </section>
+
+  <section class="hero2">
+    <h1>We are launching soon</h1>
+    <div id="countdown">
+      <p id="timer"></p>
+    </div>
+  </section>
+
+
+<!-- Join Beta Section -->
+<section class="join-beta">
+  <div class="beta-text">
+      <h1>Join the Beta</h1>
+      <h3>Be one of the first to experience FindersKeepers before anyone else!
+        Help us shape the future of dating by testing out our features,
+        giving feedback, and getting early access to exclusive updates.</h3>
+  </div>
+
+  <div class="beta-form">
+    <form id="contactForm">
+          <label for="name">Name</label>
+          <input type="text" name="name" placeholder="Full Name" required><br>
+
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Email Address" required><br>
+
+          <label for="phone">Phone</label>
+          <input type="tel" name="phone" placeholder="Mobile Number" required><br>
+
+          <button type="submit" id="submitButton">Submit</button>
+      </form>
+  
+</section>
+  
+  <!-- Footer -->
+  <footer class="footer" id="bottom-section">
+
+    <div class="footer-center">
+        <p>&copy; 2024 FindersKeepers. All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-right">
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/finderskeepers.ai?igsh=MTg5Njdza3RnZmZndQ==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61567170906089&mibextid=LQQJ4d" aria-label="WhatsApp"><i class="fab fa-facebook"></i></a>
+    </div>
+</footer>
+  
+</body>
+</html>
+<script>
+
+    /* let countDownDate = localStorage.getItem('countDown');
+
+    if (!countDownDate) {
+        countDownDate = new Date().getTime() + (14 * 24 * 60 * 60 * 1000); // 14 days from now
+        localStorage.setItem('countDownDate', countDownDate); // Save the countdown date
+    }
+
+    const x = setInterval(function() {
+        // Get today's date and time
+        const now = new Date().getTime();
+        
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+            localStorage.removeItem('countDownDate'); 
+        }
+    }, 1000);
+    </script>
+
+    <script>
+/* const countdownElement = document.getElementById("days");
+let launchDate = new Date().getTime() + 14 * 24 * 60 * 60 * 1000; // 14 days from now
+
+function updateCountdown() {
+    let now = new Date().getTime();
+    let timeRemaining = launchDate - now;
+
+    let days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+
+    if (days >= 0) {
+        countdownElement.innerText = days;
+    } else {
+        countdownElement.innerText = 0; // If time is up
+    }
+}
+
+// Run countdown every second
+setInterval(updateCountdown, 1000);
+
+// Show Pop-up when user logs in
+window.onload = function () {
+    document.getElementById('popup').classList.add('popup-active');
+};
+
+// Close Pop-up when 'X' Button is clicked
+document.getElementById("close-btn").addEventListener("click", function () {
+    document.getElementById("popup").classList.remove('popup-active');
+}); */
+
+</script>
+
+<script>
+  
+  function scrollToBottom() {
+  const bottomSection = document.getElementById("bottom-section");
+  bottomSection.scrollIntoView({ behavior: "smooth" });
+
+}
+</script>
+
+<script>function toggleMenu() {
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('active');
+}
+
+</script>
+
+<script>
+  
+  // Function to calculate the remaining time
+function startCountdown() {
+  // Check if there's already an end time saved in localStorage
+  const savedEndTime = localStorage.getItem('endTime');
+  let endTime;
+
+  if (savedEndTime) {
+    // Use the saved end time if it exists
+    endTime = new Date(savedEndTime);
+  } else {
+    // Set the end time for 14 days from now if not saved
+    endTime = new Date();
+    endTime.setDate(endTime.getDate() + 14);
+    localStorage.setItem('endTime', endTime); // Save the end time in localStorage
+  }
+
+  // Update the countdown every second
+  const interval = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = endTime - now;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the timer element
+    document.getElementById("timer").innerHTML =
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    // If the countdown is over, display a message and stop the timer
+    if (distance < 0) {
+      clearInterval(interval);
+      document.getElementById("timer").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+}
+
+// Start the countdown when the page loads
+window.onload = startCountdown;
+</script>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const phone = event.target.phone.value;
+
+    const data = {
+      fields: {
+        Name: name,
+        Email: email,
+        Phone: phone,
+      }
+    };
+
+    fetch('https://api.airtable.com/v0/appezTp09gLXihGwC/responses', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer pat8vH2xaKpoQCRGU.676bd17e2e6fd5bec17c1b3482b5bc698651316cea0dffa35423b391d162c2f3',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      // Display a success message to the user here
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      // Handle the error (e.g., show an error message)
+    });
+  });
+</script>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const name = event.target.name.value;
+  const email = event.target.email.value;
+  const phone = event.target.phone.value;
+  const submitButton = document.getElementById('submitButton'); // Get the button element
+
+  const data = {
+    fields: {
+      'Name': name,
+      'Email': email,
+      'Phone': phone,
+    }
+  };
+
+  fetch('https://api.airtable.com/v0/appezTp09gLXihGwC/responses', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer pat8vH2xaKpoQCRGU.676bd17e2e6fd5bec17c1b3482b5bc698651316cea0dffa35423b391d162c2f3',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+
+    submitButton.textContent = 'You are In!'; // Change the button text
+    submitButton.style.backgroundColor = '#63FF73'; // Change background color
+    submitButton.style.color = 'white'; // Optional: Change text color to white
+
+    // Optionally clear the form
+    event.target.reset();
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    // Handle error (you might also want to display an error message)
+  });
+});
+</script>
+
+
+
+
+
+
+
+    

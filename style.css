@@ -392,8 +392,8 @@
   /* Responsive Hero Section */
   @media (max-width: 768px) {
     .hero h1 {
-      font-size: 35px;
-      letter-spacing: 0px;
+      font-size: 33px;
+      letter-spacing: -1px;
     }
   
     .hero h2 {
